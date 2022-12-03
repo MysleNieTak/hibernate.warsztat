@@ -1,4 +1,4 @@
-package pl.sda.j133.hibernate.warsztat;
+package pl.sda.hibernate.model;
 
 public class Main {
     public static void main(String[] args) {
