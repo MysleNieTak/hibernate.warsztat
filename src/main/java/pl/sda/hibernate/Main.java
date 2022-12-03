@@ -1,8 +1,6 @@
 package pl.sda.hibernate;
 
-import pl.sda.hibernate.komendy.Komenda;
-import pl.sda.hibernate.komendy.KomendaDodajMechanik;
-import pl.sda.hibernate.komendy.KomendaDodajPojazd;
+import pl.sda.hibernate.komendy.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +11,9 @@ public class Main {
         List<Komenda> listaKomend = new ArrayList<>(
                 List.of( // list.of zwraca wynik, któy jest listą, nie możemy dodawać i usuwać, dlatego tworzymy nowąArrayList
                         new KomendaDodajPojazd(),
-                        new KomendaDodajMechanik()
+                        new KomendaDodajMechanik(),
+                        new KomendaListaMechanik(),
+                        new KomendaListaPojazd()
 
                 )
         );
