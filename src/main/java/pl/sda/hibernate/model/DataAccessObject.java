@@ -55,4 +55,27 @@ public class DataAccessObject <T>{
         }
         return Optional.empty();
     }
+
+    public boolean delete(Class<T> tClass, Long id){
+        try(Session session = HibernateUtil.INSTANCE.getSessionFactory().openSession()){
+            Transaction transaction = session.beginTransaction();
+
+            //sprawdz czy istnieje - pobrac id i spr czy nie jest null
+            T encja = session.get(tClass, id);
+
+            if(encja == null){
+                return false; // nie ma encji z takim id
+            } else {
+                session.remove(encja);
+                transaction.commit();
+                return true; // znaleźliśmy encję i ją usunęliśmy, zrobiliśmy commit
+            }
+
+        } catch (Exception ioe){
+            System.err.println("Błąd: "+ ioe);
+        }
+
+        return false; //wystąpił błąd, nie usunęliśmy rekordu
+    }
+
 }
