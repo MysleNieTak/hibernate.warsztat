@@ -1,13 +1,8 @@
 package pl.sda.hibernate.komendy;
 
-import org.hibernate.Session;
-import pl.sda.hibernate.HibernateUtil;
-import pl.sda.hibernate.model.DataAccessObject;
-import pl.sda.hibernate.model.Mechanik;
+import pl.sda.hibernate.DataAccessObject;
 import pl.sda.hibernate.model.Pojazd;
 
-import java.net.ServerSocket;
-import java.util.List;
 import java.util.Optional;
 
 public class KomendaZnajdzPojazd implements Komenda {

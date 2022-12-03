@@ -1,10 +1,6 @@
 package pl.sda.hibernate.komendy;
 
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import pl.sda.hibernate.HibernateUtil;
-import pl.sda.hibernate.model.DataAccessObject;
-import pl.sda.hibernate.model.Mechanik;
+import pl.sda.hibernate.DataAccessObject;
 import pl.sda.hibernate.model.Pojazd;
 
 public class KomendaDodajPojazd implements Komenda {

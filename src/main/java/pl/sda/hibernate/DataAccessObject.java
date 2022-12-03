@@ -1,9 +1,10 @@
-package pl.sda.hibernate.model;
+package pl.sda.hibernate;
 
 import jakarta.persistence.TypedQuery;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import pl.sda.hibernate.HibernateUtil;
+import pl.sda.hibernate.model.Pojazd;
 
 import java.util.ArrayList;
 import java.util.List;

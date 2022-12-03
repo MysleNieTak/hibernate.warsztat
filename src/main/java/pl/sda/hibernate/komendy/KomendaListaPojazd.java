@@ -1,9 +1,6 @@
 package pl.sda.hibernate.komendy;
 
-import jakarta.persistence.TypedQuery;
-import org.hibernate.Session;
-import pl.sda.hibernate.HibernateUtil;
-import pl.sda.hibernate.model.DataAccessObject;
+import pl.sda.hibernate.DataAccessObject;
 import pl.sda.hibernate.model.Pojazd;
 
 import java.util.List;
