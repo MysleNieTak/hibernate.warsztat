@@ -1,8 +1,13 @@
 package pl.sda.hibernate.model;
 
+import jakarta.persistence.TypedQuery;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import pl.sda.hibernate.HibernateUtil;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 public class DataAccessObject <T>{
 
@@ -21,5 +26,33 @@ public class DataAccessObject <T>{
         } catch (Exception e){
             System.err.println("Błąd: "+ e);
         }
+    }
+    public List<T> findAll (Class<T> tClass){
+
+        List<T> list = new ArrayList<>();
+
+
+        try(Session session = HibernateUtil.INSTANCE.getSessionFactory().openSession()){
+            TypedQuery<T> zapytanie = session.createQuery("FROM "+tClass.getName(), tClass);
+
+           list.addAll(zapytanie.getResultList()); // zwraca listę, nie wypisue
+
+        } catch (Exception e){
+            System.err.println("Błąd: "+e);
+        }
+        return list;
+    }
+
+    public Optional<T> find(Class<T> tClass, Long id){
+        try(Session session = HibernateUtil.INSTANCE.getSessionFactory().openSession()){
+
+            Pojazd pojazd = session.get(Pojazd.class, id);
+            T encja = session.get(tClass, id);
+
+        return Optional.ofNullable(encja);
+        } catch (Exception ioe){
+            System.err.println("Błąd: "+ ioe);
+        }
+        return Optional.empty();
     }
 }

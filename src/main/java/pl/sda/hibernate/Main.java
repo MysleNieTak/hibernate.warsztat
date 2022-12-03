@@ -13,7 +13,9 @@ public class Main {
                         new KomendaDodajPojazd(),
                         new KomendaDodajMechanik(),
                         new KomendaListaMechanik(),
-                        new KomendaListaPojazd()
+                        new KomendaListaPojazd(),
+                        new KomendaZnajdzPojazd(),
+                        new KomendaZnajdzMechanik()
 
                 )
         );
@@ -28,7 +30,6 @@ public class Main {
             if (dostepnaKomenda.getKomenda().equalsIgnoreCase(komenda)) {
                 dostepnaKomenda.obsluga();
             }
-
         }
     }
 }
