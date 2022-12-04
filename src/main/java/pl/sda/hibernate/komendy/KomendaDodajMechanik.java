@@ -35,6 +35,5 @@ public class KomendaDodajMechanik implements Komenda {
 
     dataAccessObject.insert(mechanik);
 
-
     }
 }

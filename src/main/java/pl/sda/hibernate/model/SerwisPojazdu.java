@@ -18,14 +18,18 @@ public class SerwisPojazdu {
     private Long id;
 
     private String opis;
-    private String zrealizowaneCzynnosci;
-    private Double koszt;
+
 
     @CreationTimestamp
     private LocalDateTime czasDodania;
 
-    private LocalDateTime czasZrealizowania;
 
+// TODO: doko
+    //KomendaZrealizujSerwisPojazdu
+    //KomendaZamknijSerwisPojazdu
+    private LocalDateTime czasZrealizowania;
+    private String zrealizowaneCzynnosci;
+    private Double koszt;
     @ManyToOne
     @ToString.Exclude
     private Mechanik mechanik;
